@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+input {
+  @apply w-[400px] border border-gray-400 py-2 px-6 bg-zinc-100/40;
+}
