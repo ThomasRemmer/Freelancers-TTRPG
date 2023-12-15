@@ -1,13 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import LoginForm from "../components/loginForm";
 import Nav from "../components/nav";
 
 export default function Home() {
+  const handleLogin = () => {
+    console.log("login");
+  };
+
   return (
     <>
       <main className="flex min-h-screen flex-col justify-between p-24">
-        <header className="flex flex-col  min-h-screen text-6xl text-center "></header>
-
-        <footer className="flex flex-col items-center justify-center w-full h-24 border-t"></footer>
+        <LoginForm onLogin={handleLogin} />
       </main>
     </>
   );
