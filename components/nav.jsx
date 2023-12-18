@@ -6,7 +6,7 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-around h-16 bg-gray-800 text-white">
       <Link href="/">
         <h1 className="text-4xl font-bold text-center text-red-400">
-          DND 5e Character Creator
+          Freelancers Character Creator
         </h1>
       </Link>
       <div>
