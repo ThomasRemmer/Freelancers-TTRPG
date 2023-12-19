@@ -1,7 +1,4 @@
-"use client";
-import React, { useState, useEffect } from "react";
 import LoginForm from "../components/loginForm";
-
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "./api/auth/[...nextauth]/route";
