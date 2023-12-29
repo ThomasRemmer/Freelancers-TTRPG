@@ -5,6 +5,10 @@ const characterSchema = new Schema({
     type: String,
     required: true,
   },
+  imgUrl: {
+    type: String,
+    required: true,
+  },
   Pronoun: {
     type: String,
     required: true,
@@ -57,68 +61,104 @@ const characterSchema = new Schema({
     type: String,
     required: true,
   },
-  Talent1: {
-    type: String,
-    required: true,
-  },
-  Talent2: {
-    type: String,
-    required: true,
-  },
-  Talent3: {
-    type: String,
-    required: true,
-  },
-  Talent4: {
-    type: String,
+  Talents: {
+    type: [],
     required: true,
   },
   Recall: {
     type: Number,
     required: true,
   },
+  RecallTags: {
+    type: [],
+    required: true,
+  },
   Infer: {
     type: Number,
+    required: true,
+  },
+  InferTags: {
+    type: [],
     required: true,
   },
   Discern: {
     type: Number,
     required: true,
   },
+  DiscernTags: {
+    type: [],
+    required: true,
+  },
   Persuade: {
     type: Number,
+    required: true,
+  },
+  PersuadeTags: {
+    type: [],
     required: true,
   },
   Control: {
     type: Number,
     required: true,
   },
+  ControlTags: {
+    type: [],
+    required: true,
+  },
   Mend: {
     type: Number,
+    required: true,
+  },
+  MendTags: {
+    type: [],
     required: true,
   },
   Create: {
     type: Number,
     required: true,
   },
+  CreateTags: {
+    type: [],
+    required: true,
+  },
   Aim: {
     type: Number,
+    required: true,
+  },
+  AimTags: {
+    type: [],
     required: true,
   },
   Hide: {
     type: Number,
     required: true,
   },
+  HideTags: {
+    type: [],
+    required: true,
+  },
   Flex: {
     type: Number,
+    required: true,
+  },
+  FlexTags: {
+    type: [],
     required: true,
   },
   Fight: {
     type: Number,
     required: true,
   },
+  FightTags: {
+    type: [],
+    required: true,
+  },
   Thaum: {
     type: Number,
+    required: true,
+  },
+  ThaumTags: {
+    type: [],
     required: true,
   },
 });
