@@ -16,8 +16,11 @@ export async function POST(req) {
       Resolve,
       Emotion,
       Stamina,
+      currentStamina,
       Stress,
+      currentStress,
       Wounds,
+      currentWounds,
       Callsign,
       Position,
       Talents,
@@ -45,7 +48,9 @@ export async function POST(req) {
       FightTags,
       Thaum,
       ThaumTags,
+      MadeBy,
     } = await req.json();
+
     await connectMongoDB();
     await Character.create({
       name,
@@ -59,8 +64,11 @@ export async function POST(req) {
       Resolve,
       Emotion,
       Stamina,
+      currentStamina,
       Stress,
+      currentStress,
       Wounds,
+      currentWounds,
       Callsign,
       Position,
       Talents,
@@ -88,6 +96,7 @@ export async function POST(req) {
       FightTags,
       Thaum,
       ThaumTags,
+      MadeBy,
     });
 
     return NextResponse.json(
