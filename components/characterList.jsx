@@ -1,5 +1,9 @@
 "use client";
+import { useEffect, useState } from "react";
+
 export default function CharacterList({ session }) {
+  const [characters, setCharacters] = useState([]);
+
   const createChartacter = async () => {
     if (session) {
       const newCharacter = {
@@ -69,10 +73,33 @@ export default function CharacterList({ session }) {
       }
     }
   };
+
+  const getCharacters = async () => {
+    const res = await fetch("api/getCharacter", {
+      method: "Get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    setCharacters(data.characterList);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getCharacters();
+  }, []);
+
   return (
     <>
-      {" "}
       <div className="flex items-center justify-center min-h-screen">
+        {characters.map((character) => (
+          <div key={character._id}>
+            <p>Name: {character.name}</p>
+            <p>Agency: {character.agency}</p>
+            <p>Rank: {character.rank}</p>
+          </div>
+        ))}
         <button
           onClick={createChartacter}
           className="px-4 py-2 bg-blue-500 text-white rounded"
