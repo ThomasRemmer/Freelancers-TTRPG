@@ -6,8 +6,6 @@ export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("_id");
-    console.log(searchParams);
-    console.log(id);
     await connectMongoDB();
     const characterList = await Character.findOne({ _id: id });
     return NextResponse.json({ characterList });

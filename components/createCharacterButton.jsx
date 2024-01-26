@@ -1,9 +1,9 @@
 "use client";
-export default function CreateCharacterButton() {
+export default function CreateCharacterButton({ session }) {
   const createChartacter = async () => {
     if (session) {
       const newCharacter = {
-        name: "",
+        name: "Unnamed Character",
         imgURL: "",
         Pronoun: "",
         Agency: "",
@@ -63,7 +63,7 @@ export default function CreateCharacterButton() {
         }
 
         const data = await response.json();
-        console.log(data);
+        window.location.reload();
       } catch (error) {
         console.error("Error:", error);
       }

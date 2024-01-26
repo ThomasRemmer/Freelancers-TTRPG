@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 export default function StatsCard({ character }) {
   const [currentWounds, setCurrentWounds] = useState(0);
@@ -13,13 +14,30 @@ export default function StatsCard({ character }) {
   const [currentResolve, setCurrentResolve] = useState(0);
   const [currentEmotion, setCurrentEmotion] = useState(0);
   const [name, setName] = useState("");
+  const [pronouns, setPronouns] = useState("");
+  const [agency, setAgency] = useState("");
+  const [rank, setRank] = useState("");
 
   console.log(character);
   useEffect(() => {
     if (character) {
-      setName(character.name); // Set name to character.name once character is fetched
+      setName(character.name);
+      setAgency(character.Agency);
+      setPronouns(character.Pronoun);
+      setRank(character.Rank);
+      setCurrentVigour(character.Vigour);
+      setCurrentSpeed(character.Speed);
+      setCurrentIntuition(character.Intuition);
+      setCurrentResolve(character.Resolve);
+      setCurrentEmotion(character.Emotion);
+      setCurrentStamina(character.Stamina);
+      setMaxStamina(character.Stamina);
+      setCurrentStress(character.Stress);
+      setMaxStress(character.Stress);
+      setCurrentWounds(character.Wounds);
+      setMaxWounds(character.Wounds);
     }
-  }, [character]); // Add character as a dependency
+  }, [character]);
 
   return (
     <>
@@ -37,16 +55,22 @@ export default function StatsCard({ character }) {
             type="text"
             className="border border-black w-full"
             placeholder="Pronouns"
+            value={pronouns}
+            onChange={(e) => setPronouns(e.target.value)}
           />
           <input
             type="text"
             className="border border-black w-full"
             placeholder="Agency"
+            value={agency}
+            onChange={(e) => setAgency(e.target.value)}
           />
           <input
             type="text"
             className="border border-black w-full"
             placeholder="Rank"
+            value={rank}
+            onChange={(e) => setRank(e.target.value)}
           />
         </div>
         <div className="border border-black grid grid-cols-[2fr,1fr] grid-rows-5 gap-x-2 gap-y-9 p-1">
