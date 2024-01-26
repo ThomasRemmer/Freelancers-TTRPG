@@ -1,4 +1,6 @@
 import CharacterList from "../../components/characterList";
+import CreateCharacterButton from "../../components/createCharacterButton";
+
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
@@ -7,7 +9,8 @@ export default async function CharacterListPage() {
   if (!session) redirect("/login");
 
   return (
-    <div>
+    <div className="pt-20">
+      <CreateCharacterButton session={session} />
       <CharacterList session={session} />
     </div>
   );

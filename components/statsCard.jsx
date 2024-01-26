@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-export default function StatsCard() {
+import React, { useState, useEffect } from "react";
+export default function StatsCard({ character }) {
   const [currentWounds, setCurrentWounds] = useState(0);
   const [currentStress, setCurrentStress] = useState(0);
   const [currentStamina, setCurrentStamina] = useState(0);
@@ -12,6 +12,15 @@ export default function StatsCard() {
   const [currentIntuition, setCurrentIntuition] = useState(0);
   const [currentResolve, setCurrentResolve] = useState(0);
   const [currentEmotion, setCurrentEmotion] = useState(0);
+  const [name, setName] = useState("");
+
+  console.log(character);
+  useEffect(() => {
+    if (character) {
+      setName(character.name); // Set name to character.name once character is fetched
+    }
+  }, [character]); // Add character as a dependency
+
   return (
     <>
       <div className="col-span-1 row-span-1 bg-gray-700 grid grid-rows-[4fr,15fr] grid-cols-2 gap-2 p-4 gap-y-2">
@@ -20,6 +29,8 @@ export default function StatsCard() {
             type="text"
             className="border border-black w-full"
             placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <input

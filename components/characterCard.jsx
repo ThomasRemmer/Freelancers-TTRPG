@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
-export default function CharacterCard() {
+import { useState, useEffect } from "react";
+
+export default function CharacterCard(character) {
   const [hasURL, setHasURL] = useState(false);
   const [imgURL, setImgURL] = useState("");
   const [aliases, setAliases] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [isFlipped, setIsFlipped] = useState(false);
+
   return (
     <>
       <div className="cursor-pointer group perspective col-span-1 row-span-1">
