@@ -21,21 +21,38 @@ export default function CharacterList({ session }) {
     getCharacters();
   }, []);
 
+  const deleteCharacter = async (characterId) => {
+    const res = await fetch(`/api/deleteCharacter?_id=${characterId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (res.ok) {
+      getCharacters();
+    } else {
+      console.error(`Error: ${res.status}`);
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-4 gap-4">
         {characters.map((character) => (
-          <Link
-            href={`/character-sheet/${character._id}`}
-            key={character._id}
-            className="border p-4"
-            characterId={character._id}
-          >
-            <p className="mb-2">Name: {character.name}</p>
-            <p className="mb-2">Agency: {character.Agency}</p>
-            <p className="mb-2">Rank: {character.Rank}</p>
-            <p className="mb-2">Id: {character._id}</p>
-          </Link>
+          <div key={character._id} className="relative border p-4 ">
+            <button
+              onClick={() => deleteCharacter(character._id)}
+              className="absolute top-0 right-0 m-2  "
+            >
+              Delete
+            </button>
+            <Link href={`/character-sheet/${character._id}`} className="group">
+              <p className="mb-2">Name: {character.name}</p>
+              <p className="mb-2">Agency: {character.Agency}</p>
+              <p className="mb-2">Rank: {character.Rank}</p>
+              <p className="mb-2">Id: {character._id}</p>
+            </Link>
+          </div>
         ))}
       </div>
     </>
