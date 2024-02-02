@@ -6,15 +6,19 @@ export default function CharacterList({ session }) {
   const [characters, setCharacters] = useState([]);
 
   const getCharacters = async () => {
-    const res = await fetch("api/getCharacter", {
-      method: "Get",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `/api/getUserCharacter?MadeBy=${session.user.email}`,
+      {
+        method: "Get",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await res.json();
+
     setCharacters(data.characterList);
-    console.log(data);
+    console.log(characters);
   };
 
   useEffect(() => {
