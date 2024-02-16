@@ -3,123 +3,135 @@ import mongoose, { Schema, models } from "mongoose";
 const characterSchema = new Schema({
   name: {
     type: String,
-    required: true,
+  },
+  imgUrl: {
+    type: String,
   },
   Pronoun: {
     type: String,
-    required: true,
   },
   Agency: {
     type: String,
-    required: true,
   },
   Rank: {
     type: String,
-    required: true,
   },
   Vigour: {
     type: Number,
-    required: true,
   },
   Speed: {
     type: Number,
-    required: true,
   },
   Intuition: {
     type: Number,
-    required: true,
   },
   Resolve: {
     type: Number,
-    required: true,
   },
   Emotion: {
     type: Number,
-    required: true,
   },
   Stamina: {
     type: Number,
-    required: true,
+  },
+  currentStamina: {
+    type: Number,
   },
   Stress: {
     type: Number,
-    required: true,
+  },
+  currentStress: {
+    type: Number,
   },
   Wounds: {
     type: Number,
-    required: true,
+  },
+  currentWounds: {
+    type: Number,
   },
   Callsign: {
     type: String,
-    required: true,
   },
   Position: {
     type: String,
-    required: true,
   },
-  Talent1: {
-    type: String,
-    required: true,
-  },
-  Talent2: {
-    type: String,
-    required: true,
-  },
-  Talent3: {
-    type: String,
-    required: true,
-  },
-  Talent4: {
-    type: String,
-    required: true,
+  Talents: {
+    type: [],
   },
   Recall: {
     type: Number,
-    required: true,
+  },
+  RecallTags: {
+    type: [],
   },
   Infer: {
     type: Number,
-    required: true,
+  },
+  InferTags: {
+    type: [],
   },
   Discern: {
     type: Number,
-    required: true,
+  },
+  DiscernTags: {
+    type: [],
   },
   Persuade: {
     type: Number,
-    required: true,
+  },
+  PersuadeTags: {
+    type: [],
   },
   Control: {
     type: Number,
-    required: true,
+  },
+  ControlTags: {
+    type: [],
   },
   Mend: {
     type: Number,
-    required: true,
+  },
+  MendTags: {
+    type: [],
   },
   Create: {
     type: Number,
-    required: true,
+  },
+  CreateTags: {
+    type: [],
   },
   Aim: {
     type: Number,
-    required: true,
+  },
+  AimTags: {
+    type: [],
   },
   Hide: {
     type: Number,
-    required: true,
+  },
+  HideTags: {
+    type: [],
   },
   Flex: {
     type: Number,
-    required: true,
+  },
+  FlexTags: {
+    type: [],
   },
   Fight: {
     type: Number,
-    required: true,
+  },
+  FightTags: {
+    type: [],
   },
   Thaum: {
     type: Number,
-    required: true,
+  },
+  ThaumTags: {
+    type: [],
+  },
+  MadeBy: {
+    type: String,
   },
 });
 const Character =

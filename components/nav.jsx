@@ -10,7 +10,7 @@ export default function Nav() {
         </h1>
       </Link>
       <div>
-        <Link href="/character-sheet">
+        <Link href="/character-list">
           <button className="px-4 py-2 font-bold text-white bg-gray-800 rounded hover:bg-gray-700">
             Characters
           </button>
