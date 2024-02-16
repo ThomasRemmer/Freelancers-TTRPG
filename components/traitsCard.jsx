@@ -1,8 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function TraitsCard() {
+export default function TraitsCard({ character }) {
   const [talents, setTalents] = useState([]);
+
+  useEffect(() => {
+    if (character) {
+      setTalents(character.Talents);
+    }
+  }, [character]);
 
   return (
     <div className="col-span-1 row-span-1 bg-gray-700 grid grid-rows-[1fr,6fr,1fr]">
